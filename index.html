@@ -1,114 +1,168 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animasi Cici - Galeri Kreatif</title>
-    <!-- Menghubungkan file CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animasi Cici</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Pacifico&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-    <!-- Header / Navigasi -->
-    <header>
-        <div class="logo">Animasi Cici</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#gallery">Galeri</a>
-            <a href="#about">Tentang</a>
-        </nav>
-    </header>
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">Animasi Cici</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"   class="nav-a active">Home</a></li>
+      <li><a href="#tentang" class="nav-a">Galeri</a></li>
+      <li><a href="#tentang" class="nav-a">Tentang</a></li>
+    </ul>
+    <button class="burger" id="burger">&#9776;</button>
+  </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Selamat Datang di Dunia Cici</h1>
-            <p>Jelajahi keindahan animasi bergerak dan karya seni digital terbaru kami.</p>
-            <a href="#gallery" class="btn-primary">Lihat Animasi</a>
-        </div>
-    </section>
-    
-    <section id="about" class="about-section" style="padding: 60px 20px;" text-align: center; background-color: #f9f9f9;>
-        <div style="max-width: 700px; margin: 0 auto;">
-            <h2 style="font-size: 2rem; margin-bottom: 15px; color: #222;">Tentang Animasi Cici</h2>
-            <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">
-                website ini adalah galeri resmi yang menampilkan berbagi karya seni digital, karakter ilustrasi, dan animasi stiker custom buatan Cici. 
-                disini setiap foto dan ide kreatif diubah menjadi animasi ekspresif yang unik, hidup dan siap di gunakan untuk meramaikan media social 
-                maupun aplikasi pesan digitalmu,
-                Cici juga menerima pesanan stiker custom dan animasi loh....
-            </p>
-        </div>
-    </section>
-        
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <!-- Dekorasi bintang/sparkle -->
+    <span class="sparkle s1">✦</span>
+    <span class="sparkle s2">✧</span>
+    <span class="sparkle s3">✦</span>
+    <span class="sparkle s4">✧</span>
+    <span class="sparkle s5">⊹</span>
+    <span class="sparkle s6">✦</span>
 
-    <!-- Gallery Section (Tempat Animasi Gambar) -->
-    <section id="gallery" class="gallery-section">
-        <h2>Koleksi Animasi</h2>
-        <div class="gallery-container">
-            
-            <!-- Kartu Animasi 1 -->
-            <div class="card">
-                <div class="image-wrapper">
-                    <!-- Ganti 'cici-animasi1.gif' dengan nama file gambar/gif kamu -->
-                    <img src="foto1.jpeg" alt="Animasi Cici 1" class="anim-img">
-                </div>
-                <div class="card-info">
-                    <h3>Cici Beraksi</h3>
-                    <p>Klik tombol di bawah untuk melihat detail atau interaksi animasi.</p>
-                    <button class="btn-action">Putar Detail</button>
-                </div>
-            </div>
-
-            <!-- Kartu Animasi 2 -->
-            <div class="card">
-                <div class="image-wrapper">
-                    <!-- Ganti 'cici-animasi2.gif' dengan nama file gambar/gif kamu -->
-                    <img src="foto2jpg.jpeg" alt="Animasi Cici 2" class="anim-img">
-                </div>
-                <div class="card-info">
-                    <h3>Cici Bersantai</h3>
-                    <p>Sentuhan animasi halus yang memberikan kesan hidup pada karakter.</p>
-                    <button class="btn-action">Putar Detail</button>
-                </div>
-            </div>
-
-        </div class="card">
-                <div class="image-wrapper">
-                    <img src="foto3jpg.jpeg" alt="Animasi Cici 3" class="anim-img">
-                </div>
-                <div class="card-info">
-                    <h3>Cici Husband</h3>
-                    <p>Karakter yang penuh kasih sayang dan keceriaan dalam setiap gerakannya.</p>
-                    <button class="btn-action">Putar Detail</button>
-                </div>
-        </div>
-
-        <div class="card">
-            <div class="image-wrapper">
-                <img src="foto4.jpg" alt="Animasi Cici 4" class="anim-img">
-        </div>
-        <div class="card-info">
-            <h3>Cici imajinasi</h3>
-            <p>Wanita misterius yang penuh pesona.</p>
-            <button class="btn-action">Putar Detail</button>
-        </div>
+    <div class="hero-text">
+      <h1 class="hero-title">Selamat Datang<br>di Dunia Cici</h1>
+      <p class="hero-desc">Jelajahi keindahan animasi bergerak dan<br>karya seni digital terbaru kami.</p>
+      <a href="#koleksi" class="btn-hero">Lihat Animasi &nbsp;→</a>
     </div>
 
-</section>
-
-    <!-- Footer -->
-    <footer>
-    <p>&copy; 2026 Animasi Cici. Dibuat dengan penuh kreativitas.</p>
-    
-    <!-- Tombol Link Instagram -->
-    <div class="social-media">
-        <a href="https://www.instagram.com/Cicianimasi" target="_blank" class="btn-ig">
-          follow me on instagram @Cicianimasi  
-        </a>
+    <div class="hero-img">
+      <!--
+        GANTI GAMBAR HERO:
+        Hapus <div class="hero-placeholder"> di bawah
+        Ganti dengan: <img src="images/karakter.png" alt="Cici">
+      -->
+      <img src="cici1.jpeg" alt="Cici">
+      <!-- Gelembung hati -->
+      <div class="bubble-heart">♥</div>
     </div>
-</footer>
-        
- <!-- Menghubungkan file JavaScript -->
-    <script src="script.js"></script>
+  </section>
+
+  <!-- ── TENTANG ── -->
+  <section class="tentang" id="tentang">
+    <div class="tentang-deco left">✏️</div>
+    <div class="tentang-deco right">🎨</div>
+    <div class="tentang-inner">
+      <span class="section-label">Tentang</span>
+      <h2 class="section-title">Tentang Animasi Cici</h2>
+      <p class="tentang-desc">
+        Website ini adalah galeri resmi yang menampilkan berbagai karya seni digital, karakter
+        ilustrasi, dan animasi stiker custom buatan Cici. Disini setiap foto dan ide kreatif diubah
+        menjadi animasi ekspresif yang unik, hidup dan siap di gunakan untuk meramaikan media
+        social maupun aplikasi pesan digitalmu.
+      </p>
+      <p class="tentang-cta">Cici juga menerima pesanan stiker custom dan animasi loh....</p>
+    </div>
+  </section>
+
+  <!-- ── KOLEKSI ── -->
+  <section class="koleksi" id="koleksi">
+    <div class="koleksi-header">
+      <span class="sparkle-black">✦</span>
+      <h2 class="koleksi-title">Koleksi Animasi</h2>
+      <span class="sparkle-pink">✦</span>
+    </div>
+    <div class="underline-heart">♥</div>
+
+    <div class="cards-grid">
+
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-img">
+          <!--
+            GANTI GAMBAR KARTU:
+            Hapus <div class="card-placeholder"> di bawah
+            Ganti dengan: <img src="images/cici1.jpg" alt="Cici Beraksi">
+          -->
+         <img src="cici1.jpeg" alt="Cici Beraksi">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Cici Beraksi</h3>
+          <p class="card-desc">Klik tombol di bawah untuk melihat detail atau interaksi animasi.</p>
+          <button class="btn-card">Putar Detail &nbsp;▶</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-img">
+         <img src="foto2jpg.jpeg" alt="Cici Bersantai">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Cici Bersantai</h3>
+          <p class="card-desc">Sentuhan animasi halus yang memberikan kesan hidup pada karakter.</p>
+          <button class="btn-card">Putar Detail &nbsp;▶</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-img">
+          <img src="yuto.JPG" alt="Cici Husband">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Cici Husband</h3>
+          <p class="card-desc">Karakter yang penuh kasih sayang dan keceriaan dalam setiap gerakannya.</p>
+          <button class="btn-card">Putar Detail &nbsp;▶</button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <div class="card-img">
+            <img src="foto4.jpg"Cici Imajinasi">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Cici Imajinasi</h3>
+          <p class="card-desc">Wanita misterius yang penuh pesona.</p>
+          <button class="btn-card">Putar Detail &nbsp;▶</button>
+        </div>
+      </div>
+       <div class="card">
+        <div class="card-img">
+            <img src="foto3jpg.jpeg"pikiran">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">pikiran</h3>
+          <p class="card-desc">imajinasi berpikir.</p>
+          <button class="btn-card">Putar Detail &nbsp;▶</button>
+        </div>
+      </div>
+ <div class="card">
+        <div class="card-img">
+            <img src="r.jpeg"kebingungan">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Dark imajinasi</h3>
+          <p class="card-desc">lelaki yang bingung dengan segala hal.</p>
+          <button class="btn-card">Putar Detail &nbsp;▶</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <span class="footer-sparkle left">✦</span>
+    <span class="footer-sparkle right">✦</span>
+    <div class="footer-logo">Animasi Cici</div>
+    <p class="footer-copy">© 2026 Animasi Cici. Dibuat dengan penuh kreativitas.</p>
+    <a href="https://instagram.com/Cicianimasi" class="btn-ig" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      follow me on instagram @Cicianimasi &nbsp;→
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
