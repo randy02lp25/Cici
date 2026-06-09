@@ -1,168 +1,203 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Animasi Cici</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Pacifico&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Animasi Cici adalah galeri karya seni digital, ilustrasi karakter, stiker custom, dan animasi kreatif dalam bahasa Indonesia, English, dan Japanese.">
+  <meta name="keywords" content="Animasi Cici, Cici, digital art, stiker custom, animasi, ilustrasi karakter, gallery">
+  <meta name="author" content="Animasi Cici">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#ff6b9d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Animasi Cici">
+  <meta property="og:description" content="Galeri resmi karya seni digital, stiker custom, dan animasi kreatif Cici.">
+  <meta property="og:image" content="cici1.jpeg">
+  <meta property="og:image:alt" content="Animasi Cici digital art gallery">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Animasi Cici">
+  <meta name="twitter:description" content="Galeri resmi karya seni digital, stiker custom, dan animasi kreatif Cici.">
+  <meta name="twitter:image" content="cici1.jpeg">
+  <title>Animasi Cici | Digital Art, Stickers, and Animation Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="cici1.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- ── NAVBAR ── -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-brand">Animasi Cici</div>
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <a class="nav-brand" href="#home" aria-label="Animasi Cici home">Animasi Cici</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home"   class="nav-a active">Home</a></li>
-      <li><a href="#tentang" class="nav-a">Galeri</a></li>
-      <li><a href="#tentang" class="nav-a">Tentang</a></li>
+      <li><a href="#home" class="nav-a active" data-nav="home" data-i18n="nav.home">Home</a></li>
+      <li><a href="#koleksi" class="nav-a" data-nav="koleksi" data-i18n="nav.gallery">Galeri</a></li>
+      <li><a href="#tentang" class="nav-a" data-nav="tentang" data-i18n="nav.about">Tentang</a></li>
+      <li><a href="#layanan" class="nav-a" data-nav="layanan" data-i18n="nav.services">Layanan</a></li>
+      <li><a href="#kontak" class="nav-a" data-nav="kontak" data-i18n="nav.contact">Kontak</a></li>
     </ul>
-    <button class="burger" id="burger">&#9776;</button>
+    <div class="lang-switch" aria-label="Language switcher">
+      <button class="lang-btn active" type="button" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+      <button class="lang-btn" type="button" data-lang="en" aria-label="English">EN</button>
+      <button class="lang-btn" type="button" data-lang="ja" aria-label="Japanese">JP</button>
+    </div>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
   </nav>
 
-  <!-- ── HERO ── -->
-  <section class="hero" id="home">
-    <!-- Dekorasi bintang/sparkle -->
-    <span class="sparkle s1">✦</span>
-    <span class="sparkle s2">✧</span>
-    <span class="sparkle s3">✦</span>
-    <span class="sparkle s4">✧</span>
-    <span class="sparkle s5">⊹</span>
-    <span class="sparkle s6">✦</span>
+  <main>
+    <section class="hero page-section active-page" id="home" data-page="home" aria-labelledby="heroTitle">
+      <span class="sparkle s1" aria-hidden="true">*</span>
+      <span class="sparkle s2" aria-hidden="true">*</span>
+      <span class="sparkle s3" aria-hidden="true">*</span>
+      <span class="sparkle s4" aria-hidden="true">*</span>
+      <span class="sparkle s5" aria-hidden="true">*</span>
+      <span class="sparkle s6" aria-hidden="true">*</span>
 
-    <div class="hero-text">
-      <h1 class="hero-title">Selamat Datang<br>di Dunia Cici</h1>
-      <p class="hero-desc">Jelajahi keindahan animasi bergerak dan<br>karya seni digital terbaru kami.</p>
-      <a href="#koleksi" class="btn-hero">Lihat Animasi &nbsp;→</a>
-    </div>
-
-    <div class="hero-img">
-      <!--
-        GANTI GAMBAR HERO:
-        Hapus <div class="hero-placeholder"> di bawah
-        Ganti dengan: <img src="images/karakter.png" alt="Cici">
-      -->
-      <img src="cici1.jpeg" alt="Cici">
-      <!-- Gelembung hati -->
-      <div class="bubble-heart">♥</div>
-    </div>
-  </section>
-
-  <!-- ── TENTANG ── -->
-  <section class="tentang" id="tentang">
-    <div class="tentang-deco left">✏️</div>
-    <div class="tentang-deco right">🎨</div>
-    <div class="tentang-inner">
-      <span class="section-label">Tentang</span>
-      <h2 class="section-title">Tentang Animasi Cici</h2>
-      <p class="tentang-desc">
-        Website ini adalah galeri resmi yang menampilkan berbagai karya seni digital, karakter
-        ilustrasi, dan animasi stiker custom buatan Cici. Disini setiap foto dan ide kreatif diubah
-        menjadi animasi ekspresif yang unik, hidup dan siap di gunakan untuk meramaikan media
-        social maupun aplikasi pesan digitalmu.
-      </p>
-      <p class="tentang-cta">Cici juga menerima pesanan stiker custom dan animasi loh....</p>
-    </div>
-  </section>
-
-  <!-- ── KOLEKSI ── -->
-  <section class="koleksi" id="koleksi">
-    <div class="koleksi-header">
-      <span class="sparkle-black">✦</span>
-      <h2 class="koleksi-title">Koleksi Animasi</h2>
-      <span class="sparkle-pink">✦</span>
-    </div>
-    <div class="underline-heart">♥</div>
-
-    <div class="cards-grid">
-
-      <!-- Card 1 -->
-      <div class="card">
-        <div class="card-img">
-          <!--
-            GANTI GAMBAR KARTU:
-            Hapus <div class="card-placeholder"> di bawah
-            Ganti dengan: <img src="images/cici1.jpg" alt="Cici Beraksi">
-          -->
-         <img src="cici1.jpeg" alt="Cici Beraksi">
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">Cici Beraksi</h3>
-          <p class="card-desc">Klik tombol di bawah untuk melihat detail atau interaksi animasi.</p>
-          <button class="btn-card">Putar Detail &nbsp;▶</button>
-        </div>
+      <div class="hero-text">
+        <h1 class="hero-title" id="heroTitle" data-i18n="hero.title">Selamat Datang<br>di Dunia Cici</h1>
+        <p class="hero-desc" data-i18n="hero.desc">Jelajahi keindahan animasi bergerak dan<br>karya seni digital terbaru kami.</p>
+        <a href="#koleksi" class="btn-hero" data-i18n="hero.button">Lihat Animasi &nbsp;&rarr;</a>
       </div>
 
-      <!-- Card 2 -->
-      <div class="card">
-        <div class="card-img">
-         <img src="foto2jpg.jpeg" alt="Cici Bersantai">
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">Cici Bersantai</h3>
-          <p class="card-desc">Sentuhan animasi halus yang memberikan kesan hidup pada karakter.</p>
-          <button class="btn-card">Putar Detail &nbsp;▶</button>
-        </div>
+      <div class="hero-img">
+        <img src="cici1.jpeg" width="1024" height="1024" alt="Karakter utama Cici" fetchpriority="high" decoding="async">
+        <div class="bubble-heart" aria-hidden="true">♥</div>
       </div>
+    </section>
 
-      <!-- Card 3 -->
-      <div class="card">
-        <div class="card-img">
-          <img src="yuto.JPG" alt="Cici Husband">
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">Cici Husband</h3>
-          <p class="card-desc">Karakter yang penuh kasih sayang dan keceriaan dalam setiap gerakannya.</p>
-          <button class="btn-card">Putar Detail &nbsp;▶</button>
-        </div>
+    <section class="tentang page-section" id="tentang" data-page="tentang" aria-labelledby="aboutTitle">
+      <div class="tentang-deco left" aria-hidden="true">✏</div>
+      <div class="tentang-deco right" aria-hidden="true">🎨</div>
+      <div class="tentang-inner">
+        <span class="section-label" data-i18n="about.label">Tentang</span>
+        <h2 class="section-title" id="aboutTitle" data-i18n="about.title">Tentang Animasi Cici</h2>
+        <p class="tentang-desc" data-i18n="about.desc">
+          Website ini adalah galeri resmi yang menampilkan berbagai karya seni digital, karakter ilustrasi, dan animasi stiker custom buatan Cici. Disini setiap foto dan ide kreatif diubah menjadi animasi ekspresif yang unik, hidup dan siap di gunakan untuk meramaikan media social maupun aplikasi pesan digitalmu.
+        </p>
+        <p class="tentang-cta" data-i18n="about.cta">Cici juga menerima pesanan stiker custom dan animasi loh....</p>
       </div>
+    </section>
 
-      <!-- Card 4 -->
-      <div class="card">
-        <div class="card-img">
-            <img src="foto4.jpg"Cici Imajinasi">
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">Cici Imajinasi</h3>
-          <p class="card-desc">Wanita misterius yang penuh pesona.</p>
-          <button class="btn-card">Putar Detail &nbsp;▶</button>
-        </div>
+    <section class="koleksi page-section" id="koleksi" data-page="koleksi" aria-labelledby="galleryTitle">
+      <div class="koleksi-header">
+        <span class="sparkle-black" aria-hidden="true">*</span>
+        <h2 class="koleksi-title" id="galleryTitle" data-i18n="gallery.title">Koleksi Animasi</h2>
+        <span class="sparkle-pink" aria-hidden="true">*</span>
       </div>
-       <div class="card">
-        <div class="card-img">
-            <img src="foto3jpg.jpeg"pikiran">
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">pikiran</h3>
-          <p class="card-desc">imajinasi berpikir.</p>
-          <button class="btn-card">Putar Detail &nbsp;▶</button>
-        </div>
-      </div>
- <div class="card">
-        <div class="card-img">
-            <img src="r.jpeg"kebingungan">
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">Dark imajinasi</h3>
-          <p class="card-desc">lelaki yang bingung dengan segala hal.</p>
-          <button class="btn-card">Putar Detail &nbsp;▶</button>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="underline-heart" aria-hidden="true">♥</div>
 
-  <!-- ── FOOTER ── -->
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-img">
+            <img src="foto9.jpg" width="1280" height="1280" alt="Cici Gambar" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title" data-i18n="gallery.gambar.title">Cici Gambar</h3>
+            <p class="card-desc" data-i18n="gallery.gambar.desc">Koleksi gambar Cici dengan suasana manis, lembut, dan kreatif.</p>
+            <button class="btn-card" type="button" data-detail="cici-gambar" data-i18n="gallery.button">Lihat Galeri &nbsp;&rarr;</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="foto2jpg.jpeg" width="1024" height="1024" alt="Cici Stiker" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title" data-i18n="gallery.stiker.title">Cici Stiker</h3>
+            <p class="card-desc" data-i18n="gallery.stiker.desc">Kumpulan stiker ekspresif untuk chat, media sosial, dan pesan harian.</p>
+            <button class="btn-card" type="button" data-detail="cici-stiker" data-i18n="gallery.button">Lihat Galeri &nbsp;&rarr;</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="foto11.jpg" width="1280" height="1280" alt="Cici Love" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title" data-i18n="gallery.love.title">Cici Love</h3>
+            <p class="card-desc" data-i18n="gallery.love.desc">Galeri hangat bertema cinta, kasih sayang, dan momen bahagia.</p>
+            <button class="btn-card" type="button" data-detail="cici-love" data-i18n="gallery.button">Lihat Galeri &nbsp;&rarr;</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="foto14.jpg" width="1280" height="1280" alt="Cici Imajinasi" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title" data-i18n="gallery.imajinasi.title">Cici Imajinasi</h3>
+            <p class="card-desc" data-i18n="gallery.imajinasi.desc">Koleksi imajinatif dengan nuansa unik dan penuh cerita.</p>
+            <button class="btn-card" type="button" data-detail="cici-imajinasi" data-i18n="gallery.button">Lihat Galeri &nbsp;&rarr;</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="layanan page-section" id="layanan" data-page="layanan" aria-labelledby="servicesTitle">
+      <div class="section-shell">
+        <span class="section-label" data-i18n="services.label">Layanan</span>
+        <h2 class="section-title" id="servicesTitle" data-i18n="services.title">Pilihan Karya Cici</h2>
+        <div class="service-grid">
+          <article class="service-card">
+            <img src="foto5.jpg" width="960" height="960" alt="Stiker custom Cici" loading="lazy" decoding="async">
+            <div>
+              <h3 data-i18n="services.item1.title">Stiker Custom</h3>
+              <p data-i18n="services.item1.desc">Ubah foto favorit menjadi stiker ekspresif untuk chat dan media sosial.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="foto6.jpg" width="1280" height="1280" alt="Animasi digital Cici" loading="lazy" decoding="async">
+            <div>
+              <h3 data-i18n="services.item2.title">Animasi Digital</h3>
+              <p data-i18n="services.item2.desc">Gerakan lembut, warna ceria, dan karakter yang terasa lebih hidup.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="foto7.jpg" width="1280" height="1280" alt="Ilustrasi karakter Cici" loading="lazy" decoding="async">
+            <div>
+              <h3 data-i18n="services.item3.title">Ilustrasi Karakter</h3>
+              <p data-i18n="services.item3.desc">Desain karakter personal untuk hadiah, profil, atau proyek kreatif.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-page page-section" id="detail" data-page="detail" aria-labelledby="detailTitle">
+      <div class="detail-layout">
+        <div class="detail-content">
+          <span class="section-label" data-i18n="detail.label">Detail Galeri</span>
+          <h2 class="section-title" id="detailTitle">Cici Gambar</h2>
+          <p id="detailText" class="detail-desc">Pilih kategori galeri untuk melihat koleksi gambar Cici.</p>
+          <a href="#koleksi" class="btn-secondary" data-i18n="detail.back">Kembali ke Galeri</a>
+        </div>
+      </div>
+      <div class="detail-gallery" id="detailGallery" aria-label="Cici gallery images"></div>
+    </section>
+
+    <section class="kontak page-section" id="kontak" data-page="kontak" aria-labelledby="contactTitle">
+      <div class="section-shell contact-shell">
+        <span class="section-label" data-i18n="contact.label">Kontak</span>
+        <h2 class="section-title" id="contactTitle" data-i18n="contact.title">Buat Pesanan Animasi</h2>
+        <p class="contact-text" data-i18n="contact.desc">Pilih konsep, kirim foto referensi, lalu Cici akan membantu membuat animasi yang sesuai dengan gaya kamu.</p>
+        <div class="contact-actions">
+          <a href="https://instagram.com/Cicianimasi" class="btn-ig" target="_blank" rel="noopener noreferrer" data-i18n="contact.instagram">Instagram @Cicianimasi</a>
+          <a href="#layanan" class="btn-secondary" data-i18n="contact.services">Lihat Layanan</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
-    <span class="footer-sparkle left">✦</span>
-    <span class="footer-sparkle right">✦</span>
+    <span class="footer-sparkle left" aria-hidden="true">*</span>
+    <span class="footer-sparkle right" aria-hidden="true">*</span>
     <div class="footer-logo">Animasi Cici</div>
-    <p class="footer-copy">© 2026 Animasi Cici. Dibuat dengan penuh kreativitas.</p>
-    <a href="https://instagram.com/Cicianimasi" class="btn-ig" target="_blank">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      follow me on instagram @Cicianimasi &nbsp;→
+    <p class="footer-copy" data-i18n="footer.copy">© 2026 Animasi Cici. Dibuat dengan penuh kreativitas.</p>
+    <a href="https://instagram.com/Cicianimasi" class="btn-ig" target="_blank" rel="noopener noreferrer" data-i18n="footer.instagram" aria-label="Instagram Cicianimasi">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+      <span>Instagram @Cicianimasi</span>
     </a>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
