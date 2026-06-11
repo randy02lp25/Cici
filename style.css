@@ -32,7 +32,8 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-img {
+img,
+video {
   -webkit-user-drag: none;
   -webkit-touch-callout: none;
   user-select: none;
@@ -40,6 +41,14 @@ img {
 
 .protected-image {
   position: relative;
+}
+.protected-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: transparent;
+  pointer-events: auto;
 }
 .protected-image::after {
   content: '© Animasi Cici';
@@ -60,6 +69,10 @@ img {
   top: 190px;
   bottom: auto;
 }
+.service-card.protected-image::before {
+  height: 220px;
+  bottom: auto;
+}
 
 /* ═══════════════════════════════════════════
    NAVBAR
@@ -73,6 +86,7 @@ img {
   justify-content: space-between;
   padding: 1rem 3rem;
   background: rgba(255,255,255,0.92);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   box-shadow: 0 2px 20px rgba(255,107,157,0.1);
   transition: box-shadow 0.3s;
@@ -619,11 +633,16 @@ button:focus-visible {
   box-shadow: 0 4px 20px rgba(255,107,157,0.12);
   text-align: left;
 }
-.service-card img {
+.service-card img,
+.service-card video {
   width: 100%;
   height: 220px;
   object-fit: cover;
   display: block;
+}
+.service-card video {
+  background: var(--pink-pale);
+  pointer-events: none;
 }
 .service-card div {
   padding: 1.2rem;

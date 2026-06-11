@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('navLinks');
   const langButtons = document.querySelectorAll('.lang-btn');
+  const pageIds = new Set(['home', 'koleksi', 'tentang', 'layanan', 'detail', 'kontak']);
 
   const translations = {
     id: {
@@ -211,19 +212,33 @@ document.addEventListener('DOMContentLoaded', () => {
       container.classList.add('protected-image');
     });
 
-    document.querySelectorAll('img').forEach((image) => {
-      if (image.dataset.protected === 'true') return;
-      image.dataset.protected = 'true';
-      image.setAttribute('draggable', 'false');
-      image.addEventListener('contextmenu', (event) => event.preventDefault());
-      image.addEventListener('dragstart', (event) => event.preventDefault());
-      image.addEventListener('touchstart', () => {
-        image.dataset.touching = 'true';
+    document.querySelectorAll('img, video').forEach((media) => {
+      if (media.dataset.protected === 'true') return;
+      media.dataset.protected = 'true';
+      media.setAttribute('draggable', 'false');
+      media.addEventListener('contextmenu', (event) => event.preventDefault());
+      media.addEventListener('dragstart', (event) => event.preventDefault());
+      media.addEventListener('touchstart', () => {
+        media.dataset.touching = 'true';
       }, { passive: true });
-      image.addEventListener('touchend', () => {
-        delete image.dataset.touching;
+      media.addEventListener('touchend', () => {
+        delete media.dataset.touching;
       }, { passive: true });
     });
+  }
+
+  function isEditableTarget(target) {
+    return Boolean(target.closest('input, textarea, select, [contenteditable="true"]'));
+  }
+
+  function loadVideoSources(video) {
+    let shouldLoad = false;
+    video.querySelectorAll('source[data-src]').forEach((source) => {
+      if (source.src) return;
+      source.src = source.dataset.src;
+      shouldLoad = true;
+    });
+    if (shouldLoad) video.load();
   }
 
   document.addEventListener('contextmenu', (event) => {
@@ -231,6 +246,51 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
     }
   });
+
+  document.addEventListener('dragstart', (event) => {
+    if (event.target.closest('.protected-image, img, video')) {
+      event.preventDefault();
+    }
+  });
+
+  document.addEventListener('copy', (event) => {
+    if (!isEditableTarget(event.target)) {
+      event.preventDefault();
+    }
+  });
+
+  document.addEventListener('cut', (event) => {
+    if (!isEditableTarget(event.target)) {
+      event.preventDefault();
+    }
+  });
+
+  document.addEventListener('selectstart', (event) => {
+    if (event.target.closest('.protected-image')) {
+      event.preventDefault();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (isEditableTarget(event.target)) return;
+    const key = event.key.toLowerCase();
+    const protectedShortcut = (event.ctrlKey || event.metaKey) && ['s', 'p', 'u', 'c'].includes(key);
+    if (protectedShortcut || event.key === 'F12') {
+      event.preventDefault();
+    }
+  });
+
+  function playAutoplayVideos(scope = document) {
+    scope.querySelectorAll('video[autoplay]').forEach((video) => {
+      loadVideoSources(video);
+      video.muted = true;
+      video.playsInline = true;
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
+    });
+  }
 
   function applyLanguage(lang) {
     currentLang = translations[lang] ? lang : 'id';
@@ -249,12 +309,15 @@ document.addEventListener('DOMContentLoaded', () => {
       button.setAttribute('aria-pressed', String(isActive));
     });
 
-    updateDetail(sessionStorage.getItem('cici-detail') || 'cici-gambar');
+    if (document.querySelector('[data-page="detail"].active-page')) {
+      updateDetail(sessionStorage.getItem('cici-detail') || 'cici-gambar');
+    }
   }
 
   function showPage(pageId) {
     const fallback = document.querySelector('[data-page="home"]');
-    const nextPage = document.querySelector(`[data-page="${pageId}"]`) || fallback;
+    const safePageId = pageIds.has(pageId) ? pageId : 'home';
+    const nextPage = document.querySelector(`[data-page="${safePageId}"]`) || fallback;
 
     document.querySelectorAll('.page-section').forEach((section) => {
       section.classList.toggle('active-page', section === nextPage);
@@ -265,6 +328,10 @@ document.addEventListener('DOMContentLoaded', () => {
       link.classList.toggle('active', link.dataset.nav === nextPage.dataset.page);
     });
 
+    if (nextPage.dataset.page === 'detail') {
+      updateDetail(sessionStorage.getItem('cici-detail') || 'cici-gambar');
+    }
+    playAutoplayVideos(nextPage);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -377,6 +444,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('hashchange', routeFromHash);
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) playAutoplayVideos(document.querySelector('.active-page') || document);
+  });
   sessionStorage.setItem('cici-detail', sessionStorage.getItem('cici-detail') || 'cici-gambar');
   applyLanguage(currentLang);
   protectImages();
